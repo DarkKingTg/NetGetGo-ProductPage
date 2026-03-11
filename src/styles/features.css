@@ -1,0 +1,96 @@
+/* ============================================
+   FEATURES SECTION
+   src/styles/Features.css
+   Palette: #2563EB | #3A86FF | #0B132B | #1F2937
+            #F8FAFC  | #111827 | #4B5563 | #E5E7EB | #FFFFFF
+============================================ */
+
+/* ── Grid ──────────────────────────────── */
+.features__grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   var(--space-8);
+}
+
+/* ── Card — default hidden state ───────── */
+.features__card {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-4);
+  opacity:        0;
+  transform:      translateY(32px);
+  transition:
+    opacity      0.7s ease-in,
+    transform    0.7s ease-in,
+    box-shadow   var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+/* ── Card — revealed state ─────────────── */
+.features__card.revealed {
+  opacity:   1;
+  transform: translateY(0);
+}
+
+/* ── Card — hover (only after revealed) ── */
+.features__card.revealed:hover {
+  transform:    translateY(-5px);
+  box-shadow:   var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+/* ── Stagger delays ────────────────────── */
+.features__card.stagger-1 { transition-delay: 0.05s; }
+.features__card.stagger-2 { transition-delay: 0.12s; }
+.features__card.stagger-3 { transition-delay: 0.19s; }
+.features__card.stagger-4 { transition-delay: 0.26s; }
+.features__card.stagger-5 { transition-delay: 0.33s; }
+.features__card.stagger-6 { transition-delay: 0.40s; }
+
+/* ── Icon ──────────────────────────────── */
+.features__icon {
+  width:            52px;
+  height:           52px;
+  background-color: var(--color-primary-light);
+  border-radius:    var(--radius-md);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  font-size:        1.5rem;
+  flex-shrink:      0;
+  transition:       background-color var(--transition-normal);
+}
+
+.features__card:hover .features__icon {
+  background-color: var(--color-primary-dim);
+}
+
+/* ── Title ─────────────────────────────── */
+.features__title {
+  font-family: var(--font-heading);
+  font-size:   var(--text-xl);
+  font-weight: 700;
+  color:       var(--color-dark-navy);
+  line-height: 1.3;
+}
+
+/* ── Description ───────────────────────── */
+.features__description {
+  font-size:   var(--text-base);
+  color:       var(--color-text-medium);
+  line-height: 1.7;
+  flex:        1;
+}
+
+/* ── Responsive ────────────────────────── */
+@media (max-width: 1024px) {
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .features__grid {
+    grid-template-columns: 1fr;
+  }
+}

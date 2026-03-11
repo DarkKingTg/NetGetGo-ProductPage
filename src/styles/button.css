@@ -1,0 +1,93 @@
+/* src/components/Button.css */
+
+/* ── Base ──────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-fast),
+    color            var(--transition-fast),
+    border-color     var(--transition-fast),
+    box-shadow       var(--transition-normal),
+    transform        var(--transition-fast);
+}
+
+.btn:hover  { transform: translateY(-2px); }
+.btn:active { transform: translateY(0px);  }
+
+/* ── Sizes ─────────────────────────────── */
+.btn--sm {
+  font-size: var(--text-sm);
+  padding: 8px 16px;
+}
+
+.btn--md {
+  font-size: var(--text-base);
+  padding: 11px 24px;
+}
+
+.btn--lg {
+  font-size: var(--text-lg);
+  padding: 14px 32px;
+  border-radius: var(--radius-lg);
+}
+
+/* ── Primary — solid blue ───────────────── */
+.btn--primary {
+  background-color: var(--color-primary);
+  color:            var(--color-text-white);
+  border-color:     var(--color-primary);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-dark-navy);
+  border-color:     var(--color-dark-navy);
+  color:            var(--color-text-white);
+  box-shadow:       var(--shadow-blue);
+}
+
+/* ── Secondary — light blue fill ────────── */
+.btn--secondary {
+  background-color: var(--color-primary-light);
+  color:            var(--color-primary);
+  border-color:     var(--color-primary-light);
+}
+
+.btn--secondary:hover {
+  background-color: #dbeafe;
+  border-color:     #dbeafe;
+}
+
+/* ── Outline — transparent + blue border ── */
+.btn--outline {
+  background-color: transparent;
+  color:            var(--color-primary);
+  border-color:     var(--color-primary);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-primary-dim);
+  box-shadow:       var(--shadow-blue);
+}
+
+/* ── Outline White — for dark sections ──── */
+.btn--outline-white {
+  background-color: transparent;
+  color:            var(--color-text-white);
+  border-color:     rgba(255, 255, 255, 0.5);
+}
+
+.btn--outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color:     var(--color-text-white);
+}

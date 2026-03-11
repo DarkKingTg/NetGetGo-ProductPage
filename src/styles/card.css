@@ -1,0 +1,24 @@
+/* src/components/Card.css */
+
+/* ── Base Card ─────────────────────────── */
+.card {
+  background:    var(--color-bg-card);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding:       var(--space-8);
+  box-shadow:    var(--shadow-sm);
+}
+
+/* ── Featured — highlighted pricing card ── */
+.card--featured {
+  border-color:  var(--color-primary);
+  border-width:  2px;
+  box-shadow:    var(--shadow-blue);
+  position:      relative;
+}
+
+/* ── Dark card — for dark section bg ────── */
+.card--dark {
+  background:  rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}

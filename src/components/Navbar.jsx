@@ -1,52 +1,102 @@
-import { useState } from "react"
-import logo from "../assets/react.svg"
+// src/components/Navbar.jsx
+// Sticky navbar — logo left, nav links center, CTA right
+// Mobile: hamburger menu with slide-down animation
+// Uses: useToggle hook, Button component
+
+import { useEffect } from 'react'
+import Button from './Button'
+import useToggle from '../hooks/useToggle'
+import '../styles/Navbar.css'
 
 const navLinks = [
-  { name: "Features", link: "#features" },
-  { name: "Pricing", link: "#pricing" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "FAQ", link: "#faq" }
+  { name: 'Features',     href: '#features'     },
+  { name: 'Pricing',      href: '#pricing'      },
+  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'FAQ',          href: '#faq'          },
 ]
 
 function Navbar() {
+  const { value: menuOpen, toggle: toggleMenu, setFalse: closeMenu } = useToggle(false)
 
-  const [menuOpen, setMenuOpen] = useState(false)
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) closeMenu()
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [closeMenu])
+
+  // Close menu when a nav link is clicked
+  const handleNavClick = () => closeMenu()
 
   return (
-    <nav className="navbar">
+    <header className="navbar">
+      <div className="navbar__container">
 
-      <div className="nav-container">
-
-        <a href="#hero">
-          <img src={logo} alt="logo" className="logo"/>
+        {/* Logo */}
+        <a href="#hero" className="navbar__logo">
+          <span className="navbar__logo-icon">NJ</span>
+          <span className="navbar__logo-text">NetJetGo</span>
         </a>
 
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          {navLinks.map((item) => (
-            <li key={item.name}>
-              <a href={item.link}>{item.name}</a>
-            </li>
-          ))}
+        {/* Desktop Nav Links */}
+        <nav className="navbar__nav" aria-label="Main navigation">
+          <ul className="navbar__links">
+            {navLinks.map((item) => (
+              <li key={item.name}>
+                <a href={item.href} className="navbar__link">
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-          <button className="cta-mobile">
+        {/* Desktop CTA */}
+        <div className="navbar__cta">
+          <Button variant="primary" size="sm" href="#pricing">
             Get Started
-          </button>
-        </ul>
+          </Button>
+        </div>
 
+        {/* Mobile Hamburger */}
         <button
-          className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className={`navbar__hamburger ${menuOpen ? 'navbar__hamburger--open' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
-          ☰
-        </button>
-
-        <button className="cta-desktop">
-          Get Started
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
       </div>
 
-    </nav>
+      {/* Mobile Menu */}
+      <div className={`navbar__mobile ${menuOpen ? 'navbar__mobile--open' : ''}`}>
+        <ul className="navbar__mobile-links">
+          {navLinks.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.href}
+                className="navbar__mobile-link"
+                onClick={handleNavClick}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="navbar__mobile-cta">
+          <Button variant="primary" size="md" href="#pricing">
+            Get Started
+          </Button>
+        </div>
+      </div>
+
+    </header>
   )
 }
 
