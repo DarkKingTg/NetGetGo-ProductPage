@@ -56,6 +56,22 @@
 .features__card.stagger-5 { transition-delay: 0.33s; }
 .features__card.stagger-6 { transition-delay: 0.40s; }
 
+/* ── Media (icon or image) ───────────────── */
+.features__media {
+  width:         52px;
+  height:        52px;
+  border-radius: var(--radius-md);
+  overflow:      hidden;
+  flex-shrink:   0;
+}
+
+.features__image {
+  width:        100%;
+  height:       100%;
+  object-fit:   cover;
+  display:      block;
+}
+
 /* ── Icon ──────────────────────────────── */
 .features__icon {
   width:            52px;
