@@ -37,26 +37,13 @@
 }
 
 .navbar__logo-icon {
-  width:            36px;
-  height:           36px;
-  background-color: var(--color-primary);
-  color:            var(--color-bg);
-  font-family:      var(--font-heading);
-  font-size:        var(--text-sm);
-  font-weight:      800;
-  border-radius:    var(--radius-sm);
-  display:          flex;
-  align-items:      center;
-  justify-content:  center;
-  letter-spacing:   0.02em;
+  width:            60px;
+  height:           60px;
 }
 
-.navbar__logo-text {
-  font-family: var(--font-heading);
-  font-size:   var(--text-xl);
-  font-weight: 700;
-  color:       var(--color-dark-navy);
-  letter-spacing: -0.02em;
+.logotxt {
+  width:            190px;
+  height:           45px;
 }
 
 /* ── Desktop Nav Links ─────────────────── */

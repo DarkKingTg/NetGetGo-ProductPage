@@ -8,7 +8,7 @@
 /* ── Section Layout ────────────────────── */
 .hero {
   background-color: var(--color-bg);
-  padding-top:      calc(var(--navbar-height) + var(--space-20));
+  padding-top:      var(--space-20);
   padding-bottom:   var(--space-24);
   overflow:         hidden;
 }
@@ -292,3 +292,12 @@
     justify-content: center;
   }
 }
+
+/* ── Bar heights — replaces inline style={{ '--h': '...' }} ── */
+.hero__bar--h1 { height: 45%; }
+.hero__bar--h2 { height: 65%; }
+.hero__bar--h3 { height: 50%; }
+.hero__bar--h4 { height: 80%; }
+.hero__bar--h5 { height: 60%; }
+.hero__bar--h6 { height: 90%; }
+.hero__bar--h7 { height: 75%; }

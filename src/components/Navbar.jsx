@@ -6,7 +6,6 @@
 import { useEffect } from 'react'
 import Button from './Button'
 import useToggle from '../hooks/useToggle'
-import '../styles/Navbar.css'
 
 const navLinks = [
   { name: 'Features',     href: '#features'     },
@@ -36,8 +35,9 @@ function Navbar() {
 
         {/* Logo */}
         <a href="#hero" className="navbar__logo">
-          <span className="navbar__logo-icon">NJ</span>
-          <span className="navbar__logo-text">NetJetGo</span>
+          <span className="logotxt">
+            <img src="./src/assets/icons/logo-text.png" alt="NetJetGo Logo" className="logotxt" />
+          </span>
         </a>
 
         {/* Desktop Nav Links */}

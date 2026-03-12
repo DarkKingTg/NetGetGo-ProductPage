@@ -5,7 +5,6 @@
 
 import Button from '../components/Button'
 import Container from '../components/Container'
-import '../styles/hero.css'
 
 function Hero() {
   return (

@@ -2,8 +2,6 @@
 // Flexible card — used for Features, Testimonials, Pricing tiers
 // Variants: default | featured | dark
 
-import '../styles/Card.css'
-
 function Card({ children, variant = 'default', className = '', ...props }) {
   return (
     <div

@@ -1,9 +1,6 @@
 // src/components/Button.jsx
 // Reusable button — 3 variants: primary | secondary | outline
 // Used across Hero, Navbar, Pricing, CTA sections
-
-import '../styles/Button.css'
-
 function Button({
   children,
   variant = 'primary',   // 'primary' | 'secondary' | 'outline'

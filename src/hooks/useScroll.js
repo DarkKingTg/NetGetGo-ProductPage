@@ -11,19 +11,19 @@ function useScroll() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed')
-            // Once revealed, stop watching (performance)
+            // Once revealed, stop watching
             observer.unobserve(entry.target)
           }
         })
       },
       {
         threshold: 0.12,   // Trigger when 12% of element is visible
-        rootMargin: '0px 0px -20px 0px'  // Slightly before fully in view
+        rootMargin: '0px 0px -40px 0px'  // Slightly before fully in view
       }
     )
 
     // Observe all .reveal elements
-    const elements = document.querySelectorAll('.reveal')
+    const elements = document.querySelectorAll('.reveal, [data-animate]')
     elements.forEach((el) => observer.observe(el))
 
     return () => observer.disconnect()

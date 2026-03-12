@@ -7,7 +7,6 @@ import Container from '../components/Container'
 import SectionTitle from '../components/SectionTitle'
 import Card from '../components/Card'
 import features from '../data/features'
-import '../styles/Features.css'
 
 function Features() {
   return (
@@ -21,16 +20,17 @@ function Features() {
         />
 
         <div className="features__grid">
-          {features.map((feature, index) => (
-            <Card
-              key={feature.id}
-              className={`features__card reveal stagger-${index + 1}`}
-            >
-              <div className="features__icon">{feature.icon}</div>
-              <h3 className="features__title">{feature.title}</h3>
-              <p className="features__description">{feature.description}</p>
-            </Card>
-          ))}
+          {features.map((feature) => (
+          <Card
+            key={feature.id}
+            className="features__card"
+            data-animate
+          >
+            <div className="features__icon">{feature.icon}</div>
+            <h3 className="features__title">{feature.title}</h3>
+            <p className="features__description">{feature.description}</p>
+          </Card>
+        ))}
         </div>
 
       </Container>
