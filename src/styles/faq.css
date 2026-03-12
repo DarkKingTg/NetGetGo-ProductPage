@@ -1,0 +1,93 @@
+/* ============================================
+   FAQ SECTION
+============================================ */
+
+/* ── List ──────────────────────────────── */
+.faq__list {
+  max-width:      720px;
+  margin:         0 auto;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+/* ── Item ──────────────────────────────── */
+.faq__item {
+  background:    var(--color-bg);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow:      hidden;
+  transition:
+    border-color 150ms ease,
+    box-shadow   150ms ease;
+}
+
+.faq__item:hover {
+  border-color: var(--color-primary);
+  box-shadow:   var(--shadow-sm);
+}
+
+.faq__item--open {
+  border-color: var(--color-primary);
+  box-shadow:   var(--shadow-blue);
+}
+
+/* ── Question Button ───────────────────── */
+.faq__question {
+  width:           100%;
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             var(--space-4);
+  padding:         var(--space-6);
+  background:      none;
+  border:          none;
+  cursor:          pointer;
+  text-align:      left;
+  font-family:     var(--font-heading);
+  font-size:       var(--text-base);
+  font-weight:     600;
+  color:           var(--color-dark-navy);
+  transition:      color 150ms ease;
+}
+
+.faq__question:hover {
+  color: var(--color-primary);
+}
+
+.faq__item--open .faq__question {
+  color: var(--color-primary);
+}
+
+/* ── Chevron Icon ──────────────────────── */
+.faq__icon {
+  flex-shrink: 0;
+  color:       var(--color-text-medium);
+  transition:  transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+               color     150ms ease;
+  display:     flex;
+  align-items: center;
+}
+
+.faq__item--open .faq__icon {
+  transform: rotate(180deg);
+  color:     var(--color-primary);
+}
+
+/* ── Answer Body ───────────────────────── */
+/* accordion-body open/close handled by animations.css */
+.faq__answer {
+  padding: 0 var(--space-6);
+}
+
+.faq__answer.open {
+  padding: 0 var(--space-6) var(--space-6);
+}
+
+.faq__answer-text {
+  font-size:   var(--text-base);
+  color:       var(--color-text-medium);
+  line-height: 1.75;
+  border-top:  1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
