@@ -96,7 +96,7 @@
 
   /* ── Layout ─────────────────────────── */
   --max-width:        1400px;
-  --section-padding-y: var(--space-24);
+  --section-padding-y: var(--space-20);
   --section-padding-x: var(--space-10);
   --navbar-height:    89px;
 
