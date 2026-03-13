@@ -12,9 +12,9 @@
 :root {
 
   /* Brand Blues */
-  --color-primary:       #2563EB;
+  --color-primary:       #483d8b;
   --color-accent:        #3A86FF;
-  --color-primary-hover: #1d4ed8;
+  --color-primary-hover: #6054ab;
   --color-primary-light: #EFF6FF;
   --color-primary-dim:   rgba(37, 99, 235, 0.10);
 
@@ -27,6 +27,7 @@
   --color-bg-alt:   #F8FAFC;
   --color-bg-card:  #FFFFFF;
   --color-bg-dark:  #0B132B;
+  --color-bg-nav:   rgba(255, 255, 255, 0.80);
 
   /* Text */
   --color-text-dark:   #111827;
@@ -44,8 +45,8 @@
   --color-error:   #EF4444;
 
   /* ── Typography ─────────────────────── */
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
-  --font-body:    'Inter', sans-serif;
+  --font-heading: 'League Spartan', sans-serif;
+  --font-body:    'helvetica', sans-serif;
 
   --text-xs:   0.75rem;
   --text-sm:   0.875rem;
@@ -98,6 +99,12 @@
   --section-padding-y: var(--space-24);
   --section-padding-x: var(--space-6);
   --navbar-height:    72px;
+
+  /*─ Transformations ────────────────────── */
+  --text-transform-upper: uppercase;
+
+  /*─ letter spacing ────────────────────── */
+  --letter-spacing-nav: 0.071em;
 }
 
 /* ─────────────────────────────────────────
