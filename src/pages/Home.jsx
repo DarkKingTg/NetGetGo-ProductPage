@@ -8,6 +8,8 @@ import Pricing from '../sections/Pricing'
 import Testimonials from '../sections/Testimonials'
 import FAQ from '../sections/FAQ'
 import Footer from '../sections/Footer'
+import ComparisonTable from '../sections/Comparisontable'
+import CTA from '../sections/CTA'
 
 function Home() {
   // Activates scroll-triggered .reveal → .revealed animations
@@ -19,8 +21,10 @@ function Home() {
       <Hero />
       <Features />
       <Pricing />
+      <ComparisonTable />
       <Testimonials />
       <FAQ />
+      <CTA />
       <Footer />
     </>
   )

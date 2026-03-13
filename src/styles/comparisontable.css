@@ -1,0 +1,113 @@
+/* ============================================
+   COMPARISON TABLE SECTION
+============================================ */
+
+/* ── Wrapper — horizontal scroll on mobile */
+.table__wrapper {
+  overflow-x:    auto;
+  border-radius: var(--radius-xl);
+  border:        1px solid var(--color-border);
+  box-shadow:    var(--shadow-md);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Table ─────────────────────────────── */
+.table {
+  width:           100%;
+  border-collapse: collapse;
+  min-width:       600px;
+  background:      var(--color-bg);
+}
+
+/* ── Header ────────────────────────────── */
+.table__th {
+  padding:         var(--space-5) var(--space-6);
+  text-align:      center;
+  font-family:     var(--font-heading);
+  font-size:       var(--text-base);
+  font-weight:     700;
+  color:           var(--color-dark-navy);
+  background:      var(--color-bg-alt);
+  border-bottom:   2px solid var(--color-border);
+  position:        relative;
+  white-space:     nowrap;
+}
+
+.table__th--feature {
+  text-align: left;
+  width:      35%;
+}
+
+/* Highlighted Growth column header */
+.table__th--featured {
+  background:   var(--color-primary-light);
+  color:        var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* ── Most Popular Badge ─────────────────── */
+.table__popular-badge {
+  display:          block;
+  font-size:        var(--text-xs);
+  font-weight:      700;
+  letter-spacing:   0.05em;
+  text-transform:   uppercase;
+  color:            var(--color-primary);
+  margin-top:       var(--space-1);
+}
+
+/* ── Row ───────────────────────────────── */
+.table__row {
+  border-bottom: 1px solid var(--color-border);
+  transition:    background-color 120ms ease;
+}
+
+.table__row:last-child {
+  border-bottom: none;
+}
+
+.table__row:hover {
+  background-color: var(--color-bg-alt);
+}
+
+/* ── Cell ──────────────────────────────── */
+.table__td {
+  padding:    var(--space-4) var(--space-6);
+  text-align: center;
+  font-size:  var(--text-sm);
+  color:      var(--color-text-medium);
+  font-weight: 500;
+}
+
+.table__td--feature {
+  text-align:  left;
+  font-weight: 600;
+  color:       var(--color-dark-navy);
+  font-size:   var(--text-base);
+}
+
+/* Highlighted Growth column cells */
+.table__td--featured {
+  background: rgba(37, 99, 235, 0.03);
+}
+
+/* ── Check / Cross Icons ───────────────── */
+.table__check {
+  color:  var(--color-primary);
+  margin: 0 auto;
+  display: block;
+}
+
+.table__cross {
+  color:  var(--color-border);
+  margin: 0 auto;
+  display: block;
+}
+
+/* ── Text value ────────────────────────── */
+.table__value {
+  font-family: var(--font-heading);
+  font-size:   var(--text-sm);
+  font-weight: 700;
+  color:       var(--color-dark-navy);
+}
