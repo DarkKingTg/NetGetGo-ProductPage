@@ -26,7 +26,17 @@ function Features() {
             className="features__card"
             data-animate
           >
-            <div className="features__icon">{feature.icon}</div>
+            <div className="features__media">
+              {feature.image ? (
+                <img
+                  className="features__image"
+                  src={feature.image}
+                  alt={`${feature.title} illustration`}
+                />
+              ) : (
+                <div className="features__icon">{feature.icon}</div>
+              )}
+            </div>
             <h3 className="features__title">{feature.title}</h3>
             <p className="features__description">{feature.description}</p>
           </Card>

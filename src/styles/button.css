@@ -50,8 +50,8 @@
 }
 
 .btn--primary:hover {
-  background-color: var(--color-dark-navy);
-  border-color:     var(--color-dark-navy);
+  background-color: var(--color-primary-hover);
+  border-color:     var(--color-primary-hover);
   color:            var(--color-text-white);
   box-shadow:       var(--shadow-blue);
 }
