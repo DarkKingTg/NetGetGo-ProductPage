@@ -1,0 +1,147 @@
+/* ============================================
+   NEWSLETTER SECTION
+   src/styles/Newsletter.css
+   Palette: #2563EB | #3A86FF | #0B132B | #1F2937
+            #F8FAFC  | #111827 | #4B5563 | #E5E7EB | #FFFFFF
+============================================ */
+
+/* ── Wrapper ───────────────────────────── */
+.newsletter__wrapper {
+  display:        flex;
+  align-items:    center;
+  justify-content: space-between;
+  gap:            var(--space-12);
+  background:     var(--color-bg-alt);
+  border:         1px solid var(--color-border);
+  border-radius:  var(--radius-xl);
+  padding:        var(--space-12);
+}
+
+/* ── Content ───────────────────────────── */
+.newsletter__content {
+  flex:      1;
+  max-width: 460px;
+}
+
+.newsletter__title {
+  font-family:   var(--font-heading);
+  font-size:     var(--text-3xl);
+  font-weight:   700;
+  color:         var(--color-dark-navy);
+  line-height:   1.2;
+  margin-top:    var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.newsletter__subtitle {
+  font-size:   var(--text-base);
+  color:       var(--color-text-medium);
+  line-height: 1.7;
+}
+
+/* ── Form ──────────────────────────────── */
+.newsletter__form {
+  flex:           1;
+  max-width:      460px;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+/* ── Input Row ─────────────────────────── */
+.newsletter__input-row {
+  display: flex;
+  gap:     var(--space-3);
+}
+
+/* ── Input ─────────────────────────────── */
+.newsletter__input {
+  flex:             1;
+  font-family:      var(--font-body);
+  font-size:        var(--text-base);
+  color:            var(--color-text-dark);
+  background:       var(--color-bg);
+  border:           1px solid var(--color-border);
+  border-radius:    var(--radius-md);
+  padding:          11px var(--space-4);
+  outline:          none;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow   var(--transition-fast);
+}
+
+.newsletter__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.newsletter__input:focus {
+  border-color: var(--color-primary);
+  box-shadow:   0 0 0 3px var(--color-primary-dim);
+}
+
+/* ── Subscribe Button ──────────────────── */
+.newsletter__btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.newsletter__btn--loading {
+  opacity: 0.75;
+  cursor:  not-allowed;
+}
+
+/* ── Success State ─────────────────────── */
+.newsletter__success {
+  display:          flex;
+  align-items:      center;
+  gap:              var(--space-3);
+  background:       rgba(16, 185, 129, 0.08);
+  border:           1px solid rgba(16, 185, 129, 0.3);
+  border-radius:    var(--radius-md);
+  padding:          var(--space-4) var(--space-5);
+  font-family:      var(--font-body);
+  font-size:        var(--text-base);
+  font-weight:      600;
+  color:            var(--color-success);
+  animation:        fadeIn 0.3s ease;
+}
+
+/* ── Note ──────────────────────────────── */
+.newsletter__note {
+  font-size:  var(--text-xs);
+  color:      var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ── Responsive ────────────────────────── */
+@media (max-width: 1024px) {
+  .newsletter__wrapper {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+
+  .newsletter__content,
+  .newsletter__form {
+    max-width: 100%;
+    width:     100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .newsletter__wrapper {
+    padding: var(--space-8);
+  }
+
+  .newsletter__input-row {
+    flex-direction: column;
+  }
+
+  .newsletter__btn {
+    width:           100%;
+    justify-content: center;
+  }
+
+  .newsletter__title {
+    font-size: var(--text-2xl);
+  }
+}

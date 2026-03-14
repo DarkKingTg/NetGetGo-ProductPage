@@ -204,3 +204,26 @@
     display: block;
   }
 }
+/* ── RESPONSIVE QA FIXES ───────────────── */
+ 
+/* Ensure navbar is always full width */
+.navbar {
+  left:  0;
+  right: 0;
+}
+ 
+/* Tablet — tighten container padding */
+@media (max-width: 1024px) {
+  .navbar__container {
+    padding: 0 var(--space-6);
+  }
+}
+ 
+/* Mobile — hamburger */
+@media (max-width: 768px) {
+  .navbar__nav,
+  .navbar__cta  { display: none; }
+  .navbar__hamburger { display: flex; }
+  .navbar__mobile    { display: block; }
+  .navbar__container { padding: 0 var(--space-5); }
+}

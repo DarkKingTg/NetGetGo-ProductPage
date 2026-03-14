@@ -101,3 +101,10 @@
     font-size: var(--text-3xl);
   }
 }
+/* ── RESPONSIVE QA FIXES ───────────────── */
+@media (max-width: 480px) {
+  .cta__headline  { font-size: var(--text-2xl); }
+  .cta__subtitle  { font-size: var(--text-base); }
+  .cta__actions   { flex-direction: column; width: 100%; }
+  .cta__actions .btn { width: 100%; justify-content: center; }
+}

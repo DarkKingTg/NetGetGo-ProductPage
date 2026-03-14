@@ -164,3 +164,14 @@
     grid-template-columns: 1fr;
   }
 }
+/* ── RESPONSIVE QA FIXES ───────────────── */
+@media (max-width: 768px) {
+  .pricing__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .pricing__card--featured {
+    margin-top: 0;
+  }
+}

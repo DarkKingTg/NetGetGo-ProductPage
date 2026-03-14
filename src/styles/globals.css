@@ -240,17 +240,44 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
 
+/* ── Responsive Breakpoints ────────────── */
+ 
+/* Large desktop — 1280px+ uses default */
+ 
+/* Desktop — 1024px */
 @media (max-width: 1024px) {
+  :root {
+    --section-padding-y: var(--space-20);
+  }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
-
-@media (max-width: 640px) {
-  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+ 
+/* Tablet — 768px */
+@media (max-width: 768px) {
+  :root {
+    --container-px: var(--space-6);
+    --section-padding-y: var(--space-16);
+  }
   h1 { font-size: var(--text-4xl); }
   h2 { font-size: var(--text-3xl); }
-
-  .section {
-    padding-top:    var(--space-16);
-    padding-bottom: var(--space-16);
+}
+ 
+/* Mobile — 640px */
+@media (max-width: 640px) {
+  :root {
+    --container-px: var(--space-5);
+    --section-padding-y: var(--space-12);
+  }
+  .grid-3,
+  .grid-2 { grid-template-columns: 1fr; }
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  .section-subtitle { font-size: var(--text-base); }
+}
+ 
+/* Small mobile — 375px */
+@media (max-width: 375px) {
+  :root {
+    --container-px: var(--space-4);
   }
 }

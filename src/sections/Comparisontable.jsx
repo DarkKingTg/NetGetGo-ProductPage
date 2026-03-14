@@ -2,6 +2,7 @@
 // Feature comparison table across Starter, Growth, Enterprise plans
 // Uses: Container, SectionTitle components
 
+import '../styles/comparisontable.css'
 import Container from '../components/Container'
 import SectionTitle from '../components/SectionTitle'
 
@@ -55,8 +56,8 @@ function ComparisonTable() {
                 <th className="table__th table__th--feature">Feature</th>
                 <th className="table__th">Starter</th>
                 <th className="table__th table__th--featured">
-                  Growth
                   <span className="table__popular-badge">Most Popular</span>
+                  Growth
                 </th>
                 <th className="table__th">Enterprise</th>
               </tr>
