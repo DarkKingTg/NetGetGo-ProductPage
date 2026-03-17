@@ -1,10 +1,6 @@
-// src/components/Container.jsx
-// Centers content and applies max-width
-// Used inside every section
-
 function Container({ children, className = '' }) {
   return (
-    <div className={`container ${className}`}>
+    <div className={`mx-auto w-full max-w-7xl px-6 lg:px-8 ${className}`.trim()}>
       {children}
     </div>
   )

@@ -1,17 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
-:root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Sora", sans-serif;
+
+  --color-ink: #11203a;
+  --color-sand: #f4efe6;
+  --color-panel: #fffdf8;
+  --color-brand: #2553d7;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float-soft: float-soft 7s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-pulse-glow: pulse-glow 5s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes float-soft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 20px 80px rgba(15, 23, 42, 0.08);
+    }
+
+    50% {
+      box-shadow: 0 28px 90px rgba(37, 83, 215, 0.12);
+    }
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: "Manrope", sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background:
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.84), transparent 30%),
+      radial-gradient(circle at 85% 8%, rgba(194, 120, 3, 0.14), transparent 20%),
+      radial-gradient(circle at 78% 72%, rgba(37, 83, 215, 0.1), transparent 24%),
+      linear-gradient(180deg, #faf5ee 0%, #f5f0e8 48%, #f2ede5 100%);
+    color: #11203a;
+  }
+
+  ::selection {
+    background: rgba(37, 83, 215, 0.18);
+    color: #11203a;
+  }
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+@layer components {
+  .premium-card {
+    @apply rounded-[32px] border border-white/70 bg-white/80 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl;
+  }
+
+  .animate-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .animate-delay-2 {
+    animation-delay: 0.16s;
+  }
+
+  .animate-delay-3 {
+    animation-delay: 0.24s;
+  }
+
+  .animate-delay-4 {
+    animation-delay: 0.32s;
+  }
+
+  .animate-delay-5 {
+    animation-delay: 0.4s;
+  }
+
+  .logo-marquee {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
 }

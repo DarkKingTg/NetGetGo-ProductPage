@@ -1,101 +1,172 @@
-// src/components/Navbar.jsx
-// Sticky navbar — logo left, nav links center, CTA right
-// Mobile: hamburger menu with slide-down animation
-// Uses: useToggle hook, Button component
-
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Button from './Button'
 import useToggle from '../hooks/useToggle'
 
 const navLinks = [
-  { name: 'Features',     href: '#features'     },
-  { name: 'Pricing',      href: '#pricing'      },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'FAQ',          href: '#faq'          },
+  { name: 'Overview', href: '#product' },
+  { name: 'Features', href: '#features' },
+  { name: 'Pricing', href: '#pricing' },
+  { name: 'FAQ', href: '#faq' },
 ]
 
 function Navbar() {
   const { value: menuOpen, toggle: toggleMenu, setFalse: closeMenu } = useToggle(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [activeHash, setActiveHash] = useState('#hero')
 
-  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) closeMenu()
+      if (window.innerWidth >= 1024) closeMenu()
     }
+
+    handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [closeMenu])
 
-  // Close menu when a nav link is clicked
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 16)
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const sections = ['#hero', ...navLinks.map((item) => item.href)]
+      .map((selector) => document.querySelector(selector))
+      .filter(Boolean)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+        if (visibleEntry) {
+          setActiveHash(`#${visibleEntry.target.id}`)
+        }
+      },
+      {
+        rootMargin: '-35% 0px -45% 0px',
+        threshold: [0.25, 0.5, 0.75],
+      },
+    )
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
   const handleNavClick = () => closeMenu()
+  const shellClasses = isScrolled
+    ? 'border border-white/70 bg-white/85 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl'
+    : 'border border-transparent bg-white/55 backdrop-blur-lg'
 
   return (
-    <header className="navbar">
-      <div className="navbar__container">
+    <header className="sticky top-0 z-50 pt-4">
+      <div className="mx-auto flex max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className={`flex w-full items-center justify-between rounded-full px-4 py-3 transition duration-300 sm:px-5 ${shellClasses}`}>
+          <a href="#hero" className="flex items-center gap-3" onClick={handleNavClick}>
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-sm font-bold text-white">
+              NJ
+            </span>
+            <span className="leading-tight">
+              <span className="block font-display text-base font-semibold tracking-[-0.03em] text-ink">
+                NetJetGo
+              </span>
+              <span className="block text-[0.68rem] uppercase tracking-[0.24em] text-slate-500">
+                by Netjet IT
+              </span>
+            </span>
+          </a>
 
-        {/* Logo */}
-        <a href="#hero" className="navbar__logo">
-          <span className="logotxt">
-            <img src="./src/assets/icons/logo-text.png" alt="NetJetGo Logo" className="logotxt" />
-          </span>
-        </a>
+          <nav className="hidden lg:block" aria-label="Main navigation">
+            <ul className="flex items-center gap-2 rounded-full bg-white/75 px-2 py-2 ring-1 ring-slate-900/6">
+              {navLinks.map((item) => {
+                const isActive = activeHash === item.href
 
-        {/* Desktop Nav Links */}
-        <nav className="navbar__nav" aria-label="Main navigation">
-          <ul className="navbar__links">
-            {navLinks.map((item) => (
-              <li key={item.name}>
-                <a href={item.href} className="navbar__link">
-                  {item.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+                return (
+                  <li key={item.name}>
+                    <a
+                      href={item.href}
+                      className={`inline-flex rounded-full px-4 py-2 text-sm font-medium transition ${
+                        isActive
+                          ? 'bg-ink text-white shadow-lg shadow-slate-900/10'
+                          : 'text-slate-600 hover:bg-slate-900/5 hover:text-slate-900'
+                      }`}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </nav>
 
-        {/* Desktop CTA */}
-        <div className="navbar__cta">
-          <Button variant="primary" size="sm" href="#pricing">
-            Get Started
-          </Button>
+          <div className="hidden items-center gap-3 lg:flex">
+            <Button href="#contact" variant="outline" size="sm">
+              Talk to sales
+            </Button>
+            <Button href="#pricing" variant="secondary" size="sm">
+              Book a demo
+            </Button>
+          </div>
+
+          <button
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300/70 bg-white/85 text-slate-900 transition hover:border-slate-400 lg:hidden"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className="relative h-4 w-5">
+              <span
+                className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`}
+              />
+              <span
+                className={`absolute left-0 top-[7px] h-0.5 w-5 rounded-full bg-current transition ${menuOpen ? 'opacity-0' : ''}`}
+              />
+              <span
+                className={`absolute left-0 top-[14px] h-0.5 w-5 rounded-full bg-current transition ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`}
+              />
+            </span>
+          </button>
         </div>
-
-        {/* Mobile Hamburger */}
-        <button
-          className={`navbar__hamburger ${menuOpen ? 'navbar__hamburger--open' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`navbar__mobile ${menuOpen ? 'navbar__mobile--open' : ''}`}>
-        <ul className="navbar__mobile-links">
-          {navLinks.map((item) => (
-            <li key={item.name}>
-              <a
-                href={item.href}
-                className="navbar__mobile-link"
-                onClick={handleNavClick}
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="navbar__mobile-cta">
-          <Button variant="primary" size="md" href="#pricing">
-            Get Started
-          </Button>
+      <div
+        id="mobile-menu"
+        className={`mx-auto mt-3 max-w-7xl px-4 transition duration-300 sm:px-6 lg:hidden ${
+          menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+      >
+        <div className="overflow-hidden rounded-[28px] border border-white/70 bg-white/90 p-4 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+          <nav aria-label="Mobile navigation">
+            <ul className="space-y-2">
+              {navLinks.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className="flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-900/5 hover:text-slate-900"
+                    onClick={handleNavClick}
+                  >
+                    <span>{item.name}</span>
+                    <span className="text-slate-400">/</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="mt-4 flex flex-col gap-3">
+            <Button href="#contact" variant="outline" size="md" onClick={handleNavClick}>
+              Talk to sales
+            </Button>
+            <Button href="#pricing" variant="secondary" size="md" onClick={handleNavClick}>
+              Book a demo
+            </Button>
+          </div>
         </div>
       </div>
-
     </header>
   )
 }

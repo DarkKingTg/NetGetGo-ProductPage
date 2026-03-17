@@ -1,0 +1,490 @@
+- generic [ref=e2]:
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - link "NJ NetJetGo by Netjet IT" [ref=e7] [cursor=pointer]:
+        - /url: "#hero"
+        - generic [ref=e8]: NJ
+        - generic [ref=e9]:
+          - generic [ref=e10]: NetJetGo
+          - generic [ref=e11]: by Netjet IT
+      - navigation "Main navigation" [ref=e12]:
+        - list [ref=e13]:
+          - listitem [ref=e14]:
+            - link "Overview" [ref=e15] [cursor=pointer]:
+              - /url: "#product"
+          - listitem [ref=e16]:
+            - link "Features" [ref=e17] [cursor=pointer]:
+              - /url: "#features"
+          - listitem [ref=e18]:
+            - link "Pricing" [ref=e19] [cursor=pointer]:
+              - /url: "#pricing"
+          - listitem [ref=e20]:
+            - link "FAQ" [ref=e21] [cursor=pointer]:
+              - /url: "#faq"
+      - generic [ref=e22]:
+        - link "Talk to sales" [ref=e23] [cursor=pointer]:
+          - /url: "#contact"
+        - link "Book a demo" [ref=e24] [cursor=pointer]:
+          - /url: "#pricing"
+  - main [ref=e25]:
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: Calm operations for growing teams.
+        - heading "Run the business from one calm, premium workspace." [level=1] [ref=e31]
+        - paragraph [ref=e32]: NetJetGo brings operations, automation, reporting, and client delivery into one premium layer so growing teams can move faster without adding more chaos.
+        - generic [ref=e33]:
+          - link "Book a live demo" [ref=e34] [cursor=pointer]:
+            - /url: "#contact"
+            - text: Book a live demo
+            - img [ref=e35]
+          - link "Explore pricing" [ref=e37] [cursor=pointer]:
+            - /url: "#pricing"
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e41]
+            - text: No credit card
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - text: Built for India-first teams
+          - generic [ref=e47]:
+            - img [ref=e49]
+            - text: Implementation support included
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - paragraph [ref=e53]: 35%
+            - paragraph [ref=e54]: less manual follow-up
+          - generic [ref=e55]:
+            - paragraph [ref=e56]: 10 days
+            - paragraph [ref=e57]: average implementation runway
+          - generic [ref=e58]:
+            - paragraph [ref=e59]: 99.9%
+            - paragraph [ref=e60]: workspace uptime target
+      - generic [ref=e65]:
+        - generic [ref=e71]: NetJetGo workspace
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e75]:
+              - generic [ref=e76]:
+                - paragraph [ref=e77]: Revenue pulse
+                - heading "INR 4.2M" [level=3] [ref=e78]
+              - generic [ref=e79]: +18.4% this month
+            - generic [ref=e97]:
+              - generic [ref=e98]:
+                - paragraph [ref=e99]: Clients live
+                - paragraph [ref=e100]: 1,284
+              - generic [ref=e101]:
+                - paragraph [ref=e102]: Automation saves
+                - paragraph [ref=e103]: 18 hrs/wk
+              - generic [ref=e104]:
+                - paragraph [ref=e105]: Team adoption
+                - paragraph [ref=e106]: 94%
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - paragraph [ref=e109]: Today's signal
+              - paragraph [ref=e110]: Teams have cleared blockers early enough to ship client updates before 5 PM.
+            - generic [ref=e111]:
+              - paragraph [ref=e112]: Live activity
+              - generic [ref=e113]:
+                - generic [ref=e116]:
+                  - paragraph [ref=e117]: Delivery
+                  - paragraph [ref=e118]: 3 milestones moved to ready for review
+                - generic [ref=e121]:
+                  - paragraph [ref=e122]: Sales
+                  - paragraph [ref=e123]: 2 deals need pricing approvals today
+                - generic [ref=e126]:
+                  - paragraph [ref=e127]: Support
+                  - paragraph [ref=e128]: All priority tickets cleared before noon
+    - region "Partner ecosystem" [ref=e129]:
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - paragraph [ref=e133]: Representative customer marks
+          - paragraph [ref=e134]: Swap these placeholders for final customer or partner logos later.
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - generic [ref=e137]: NS
+            - generic [ref=e138]: Northstar
+          - generic [ref=e139]:
+            - generic [ref=e140]: AT
+            - generic [ref=e141]: Atlas
+          - generic [ref=e142]:
+            - generic [ref=e143]: LM
+            - generic [ref=e144]: Lumen
+          - generic [ref=e145]:
+            - generic [ref=e146]: SV
+            - generic [ref=e147]: Summit
+          - generic [ref=e148]:
+            - generic [ref=e149]: VX
+            - generic [ref=e150]: Vertex
+          - generic [ref=e151]:
+            - generic [ref=e152]: PL
+            - generic [ref=e153]: Pilot
+    - generic [ref=e155]:
+      - generic [ref=e156]:
+        - generic [ref=e157]: Why teams switch
+        - heading "Replace operational drag with one clear decision layer." [level=2] [ref=e158]
+        - paragraph [ref=e159]: NetJetGo brings structure to everyday work so founders, operators, and delivery teams are finally looking at the same live picture.
+      - generic [ref=e160]:
+        - article [ref=e161]:
+          - paragraph [ref=e162]: 3.2x
+          - heading "Faster decision cycles" [level=3] [ref=e163]
+          - paragraph [ref=e164]: Give leadership, operations, and delivery teams one shared operating picture instead of eight half-trusted reports.
+        - article [ref=e165]:
+          - paragraph [ref=e166]: 18 hrs
+          - heading "Saved every week" [level=3] [ref=e167]
+          - paragraph [ref=e168]: Replace spreadsheet follow-ups, manual status checks, and disconnected updates with automations that actually stick.
+        - article [ref=e169]:
+          - paragraph [ref=e170]: 1 view
+          - heading "For revenue to delivery" [level=3] [ref=e171]
+          - paragraph [ref=e172]: From leads to client execution, every team sees the same reality and knows what needs action next.
+    - generic [ref=e175]:
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - generic [ref=e178]: Operating layer
+          - heading "Give every team the same live picture of the business." [level=2] [ref=e179]
+          - paragraph [ref=e180]: Use one clean system for handoffs, approvals, client delivery, and reporting so decisions happen with less back-and-forth.
+        - generic [ref=e181]:
+          - generic [ref=e182]:
+            - img [ref=e184]
+            - paragraph [ref=e186]: Pipeline, delivery, approvals, and support in one workspace
+          - generic [ref=e187]:
+            - img [ref=e189]
+            - paragraph [ref=e191]: Premium onboarding with implementation support from Netjet IT
+          - generic [ref=e192]:
+            - img [ref=e194]
+            - paragraph [ref=e196]: Clean reporting surfaces for founders, operators, and managers
+        - generic [ref=e197]:
+          - paragraph [ref=e198]: Implementation snapshot
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - paragraph [ref=e201]: Week 1
+              - paragraph [ref=e202]: Audit workflows, confirm data touchpoints, align dashboard priorities.
+            - generic [ref=e203]:
+              - paragraph [ref=e204]: Week 2
+              - paragraph [ref=e205]: Launch reporting surfaces, enable automations, train the operating team.
+      - generic [ref=e209]:
+        - generic [ref=e215]: NetJetGo workspace
+        - generic [ref=e216]:
+          - generic [ref=e217]:
+            - generic [ref=e219]:
+              - generic [ref=e220]:
+                - paragraph [ref=e221]: Revenue pulse
+                - heading "INR 4.2M" [level=3] [ref=e222]
+              - generic [ref=e223]: +18.4% this month
+            - generic [ref=e241]:
+              - generic [ref=e242]:
+                - paragraph [ref=e243]: Clients live
+                - paragraph [ref=e244]: 1,284
+              - generic [ref=e245]:
+                - paragraph [ref=e246]: Automation saves
+                - paragraph [ref=e247]: 18 hrs/wk
+              - generic [ref=e248]:
+                - paragraph [ref=e249]: Team adoption
+                - paragraph [ref=e250]: 94%
+          - generic [ref=e251]:
+            - generic [ref=e252]:
+              - paragraph [ref=e253]: Today's signal
+              - paragraph [ref=e254]: Teams have cleared blockers early enough to ship client updates before 5 PM.
+            - generic [ref=e255]:
+              - paragraph [ref=e256]: Live activity
+              - generic [ref=e257]:
+                - generic [ref=e260]:
+                  - paragraph [ref=e261]: Delivery
+                  - paragraph [ref=e262]: 3 milestones moved to ready for review
+                - generic [ref=e265]:
+                  - paragraph [ref=e266]: Sales
+                  - paragraph [ref=e267]: 2 deals need pricing approvals today
+                - generic [ref=e270]:
+                  - paragraph [ref=e271]: Support
+                  - paragraph [ref=e272]: All priority tickets cleared before noon
+    - generic [ref=e274]:
+      - generic [ref=e275]:
+        - generic [ref=e276]: Core modules
+        - heading "Polished placeholders now hold the space for product imagery." [level=2] [ref=e277]
+        - paragraph [ref=e278]: The layout stays premium and presentation-ready now, and you can replace each block with real screenshots whenever they are ready.
+      - generic [ref=e279]:
+        - article [ref=e280]:
+          - generic [ref=e282]: Placeholder visual
+          - generic [ref=e283]:
+            - heading "Fast response infrastructure" [level=3] [ref=e284]
+            - paragraph [ref=e285]: Modern cloud architecture keeps critical workflows crisp, even when teams, clients, and approvals stack up.
+        - article [ref=e286]:
+          - generic [ref=e288]: Security state
+          - generic [ref=e295]:
+            - heading "Security people can trust" [level=3] [ref=e296]
+            - paragraph [ref=e297]: Role-based access, audit-ready workflows, and enterprise-grade handling make the page feel premium because the product is.
+        - article [ref=e298]:
+          - generic [ref=e300]: Reporting frame
+          - generic [ref=e305]:
+            - heading "Live reporting surfaces" [level=3] [ref=e306]
+            - paragraph [ref=e307]: Turn raw activity into practical dashboards for revenue, customer health, throughput, and upcoming risk.
+        - article [ref=e308]:
+          - generic [ref=e310]: Connected nodes
+          - generic [ref=e318]:
+            - heading "Connected toolchain" [level=3] [ref=e319]
+            - paragraph [ref=e320]: Link the systems your team already uses so NetJetGo becomes the operating layer, not another isolated app.
+        - article [ref=e321]:
+          - generic [ref=e323]: Support lane
+          - generic [ref=e340]:
+            - heading "White-glove support" [level=3] [ref=e341]
+            - paragraph [ref=e342]: Your team gets setup guidance, migration help, and human support that feels like part of your internal ops crew.
+        - article [ref=e343]:
+          - generic [ref=e345]: Growth orbit
+          - generic [ref=e350]:
+            - heading "Built to scale elegantly" [level=3] [ref=e351]
+            - paragraph [ref=e352]: Start lean, standardize the messy middle, and keep the same product posture when the business is ready to grow faster.
+    - generic [ref=e356]:
+      - generic [ref=e357]:
+        - generic [ref=e358]: How it works
+        - heading "A rollout that stays simple even when the business is not." [level=2] [ref=e359]
+        - paragraph [ref=e360]: Start with the workflows that matter most, then expand without forcing the team into another heavy implementation cycle.
+      - generic [ref=e361]:
+        - article [ref=e362]:
+          - generic [ref=e363]:
+            - generic [ref=e364]: "01"
+            - heading "Map the business rhythm" [level=3] [ref=e365]
+          - paragraph [ref=e366]: "Capture the work that matters most first: handoffs, approvals, client delivery, and the numbers leadership checks weekly."
+        - article [ref=e367]:
+          - generic [ref=e368]:
+            - generic [ref=e369]: "02"
+            - heading "Design calm automations" [level=3] [ref=e370]
+          - paragraph [ref=e371]: Replace follow-up fatigue with clear triggers, ownership, and status logic that keeps work moving without more meetings.
+        - article [ref=e372]:
+          - generic [ref=e373]:
+            - generic [ref=e374]: "03"
+            - heading "Roll out with confidence" [level=3] [ref=e375]
+          - paragraph [ref=e376]: Launch with dashboards, enablement, and support so the team sees immediate clarity instead of another change-management burden.
+    - generic [ref=e378]:
+      - generic [ref=e379]:
+        - generic [ref=e380]: Customer proof
+        - heading "Trusted by teams that need clarity, not ceremony." [level=2] [ref=e381]
+        - paragraph [ref=e382]: "The strongest proof is operational: faster reviews, cleaner reporting, and fewer status-chasing loops."
+      - generic [ref=e383]:
+        - article [ref=e384]:
+          - generic [ref=e385]:
+            - generic [ref=e386]: "*"
+            - generic [ref=e387]: "*"
+            - generic [ref=e388]: "*"
+            - generic [ref=e389]: "*"
+            - generic [ref=e390]: "*"
+          - paragraph [ref=e391]: "\"NetJetGo gave us a calmer operating cadence almost immediately. Leadership finally sees the same story the delivery team sees.\""
+          - generic [ref=e392]:
+            - paragraph [ref=e393]: Arjun Mehta
+            - paragraph [ref=e394]: CEO, TechVision India
+        - article [ref=e395]:
+          - generic [ref=e396]:
+            - generic [ref=e397]: "*"
+            - generic [ref=e398]: "*"
+            - generic [ref=e399]: "*"
+            - generic [ref=e400]: "*"
+            - generic [ref=e401]: "*"
+          - paragraph [ref=e402]: "\"What felt premium to us was not the visuals alone. It was the clarity. No more chasing updates across five tools before every review.\""
+          - generic [ref=e403]:
+            - paragraph [ref=e404]: Priya Sharma
+            - paragraph [ref=e405]: Operations Head, Swiftlog
+        - article [ref=e406]:
+          - generic [ref=e407]:
+            - generic [ref=e408]: "*"
+            - generic [ref=e409]: "*"
+            - generic [ref=e410]: "*"
+            - generic [ref=e411]: "*"
+            - generic [ref=e412]: "*"
+          - paragraph [ref=e413]: "\"The rollout was fast, the reporting is clean, and the product feels like it was designed for teams that have already outgrown duct tape.\""
+          - generic [ref=e414]:
+            - paragraph [ref=e415]: Rohit Nair
+            - paragraph [ref=e416]: Founder, BuildFast Studios
+    - generic [ref=e418]:
+      - generic [ref=e419]:
+        - generic [ref=e420]: Pricing
+        - heading "Clear plans for teams at different stages of maturity." [level=2] [ref=e421]
+        - paragraph [ref=e422]: Start lean, standardize the messy middle, and move into a tailored rollout when the business needs more depth.
+      - generic [ref=e423]:
+        - article [ref=e424]:
+          - paragraph [ref=e425]: Starter
+          - generic [ref=e426]:
+            - paragraph [ref=e427]: INR 999
+            - paragraph [ref=e428]: per month
+          - paragraph [ref=e429]: For small teams moving out of spreadsheets and into a more reliable operating rhythm.
+          - list [ref=e430]:
+            - listitem [ref=e431]:
+              - img [ref=e433]
+              - text: Up to 5 users
+            - listitem [ref=e435]:
+              - img [ref=e437]
+              - text: Core dashboard views
+            - listitem [ref=e439]:
+              - img [ref=e441]
+              - text: Email support
+            - listitem [ref=e443]:
+              - img [ref=e445]
+              - text: Implementation checklist
+          - link "Start with Starter" [ref=e448] [cursor=pointer]:
+            - /url: "#contact"
+        - article [ref=e449]:
+          - generic [ref=e450]: Most popular
+          - paragraph [ref=e451]: Growth
+          - generic [ref=e452]:
+            - paragraph [ref=e453]: INR 2,499
+            - paragraph [ref=e454]: per month
+          - paragraph [ref=e455]: For growing teams that want stronger reporting, automations, and collaboration standards.
+          - list [ref=e456]:
+            - listitem [ref=e457]:
+              - img [ref=e459]
+              - text: Up to 25 users
+            - listitem [ref=e461]:
+              - img [ref=e463]
+              - text: Automation builder
+            - listitem [ref=e465]:
+              - img [ref=e467]
+              - text: Advanced analytics
+            - listitem [ref=e469]:
+              - img [ref=e471]
+              - text: Priority support
+            - listitem [ref=e473]:
+              - img [ref=e475]
+              - text: Custom integrations
+          - link "Book a Growth demo" [ref=e478] [cursor=pointer]:
+            - /url: "#contact"
+        - article [ref=e479]:
+          - paragraph [ref=e480]: Enterprise
+          - generic [ref=e481]:
+            - paragraph [ref=e482]: Custom
+            - paragraph [ref=e483]: tailored scope
+          - paragraph [ref=e484]: For organizations needing dedicated onboarding, governance, and deployment flexibility.
+          - list [ref=e485]:
+            - listitem [ref=e486]:
+              - img [ref=e488]
+              - text: Unlimited users
+            - listitem [ref=e490]:
+              - img [ref=e492]
+              - text: Dedicated success partner
+            - listitem [ref=e494]:
+              - img [ref=e496]
+              - text: Custom workflows
+            - listitem [ref=e498]:
+              - img [ref=e500]
+              - text: SLA support
+            - listitem [ref=e502]:
+              - img [ref=e504]
+              - text: Private rollout plan
+          - link "Talk to enterprise sales" [ref=e507] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=e508]: Every plan includes guided onboarding, support from Netjet IT, and space to swap in final screenshots, customer logos, and product visuals later.
+    - generic [ref=e511]:
+      - generic [ref=e512]:
+        - generic [ref=e513]: FAQ
+        - heading "Questions leaders ask before they roll out a new operating system." [level=2] [ref=e514]
+        - paragraph [ref=e515]: "The essentials: rollout speed, flexibility, expansion path, and how the product fits into the stack you already run."
+      - generic [ref=e516]:
+        - article [ref=e517]:
+          - button "How long does onboarding usually take? +" [expanded] [ref=e518]:
+            - generic [ref=e519]: How long does onboarding usually take?
+            - generic [ref=e520]: +
+          - paragraph [ref=e523]: Most teams can map the first workflows and reporting surfaces within 10 business days, with rollout pace depending on the number of handoffs and integrations involved.
+        - article [ref=e524]:
+          - button "Can we start with one team and expand later? +" [ref=e525]:
+            - generic [ref=e526]: Can we start with one team and expand later?
+            - generic [ref=e527]: +
+          - paragraph [ref=e528]: Yes. NetJetGo is designed to start with a focused operating surface, then expand into additional teams, workflows, and reporting views over time.
+        - article [ref=e529]:
+          - button "How flexible is the workflow layer? +" [ref=e530]:
+            - generic [ref=e531]: How flexible is the workflow layer?
+            - generic [ref=e532]: +
+          - paragraph [ref=e533]: You can tailor approvals, ownership, statuses, and alerts around how your business actually runs instead of forcing teams into a rigid template.
+        - article [ref=e534]:
+          - button "Can this connect with our current stack? +" [ref=e535]:
+            - generic [ref=e536]: Can this connect with our current stack?
+            - generic [ref=e537]: +
+          - paragraph [ref=e538]: Yes. The operating model is built to sit above the tools you already use so the team gets one clean decision layer instead of another isolated app.
+    - generic [ref=e541]:
+      - generic [ref=e542]:
+        - generic [ref=e543]:
+          - generic [ref=e544]: Talk to the team
+          - heading "See how NetJetGo would fit your workflow." [level=2] [ref=e545]
+          - paragraph [ref=e546]: Share the first process you want to clean up, and we will shape the right rollout around your team and stack.
+        - generic [ref=e547]:
+          - link "Phone +91 8220201666" [ref=e548] [cursor=pointer]:
+            - /url: tel:+918220201666
+            - generic [ref=e549]: Phone
+            - generic [ref=e550]: +91 8220201666
+          - link "Email hq@netjetit.com" [ref=e551] [cursor=pointer]:
+            - /url: mailto:hq@netjetit.com
+            - generic [ref=e552]: Email
+            - generic [ref=e553]: hq@netjetit.com
+          - link "Website netjetit.com" [ref=e554] [cursor=pointer]:
+            - /url: https://netjetit.com
+            - generic [ref=e555]: Website
+            - generic [ref=e556]: netjetit.com
+        - generic [ref=e557]:
+          - generic [ref=e558]:
+            - paragraph [ref=e559]: Response time
+            - paragraph [ref=e560]: < 24 hours
+          - generic [ref=e561]:
+            - paragraph [ref=e562]: Support coverage
+            - paragraph [ref=e563]: Business-wide
+          - generic [ref=e564]:
+            - paragraph [ref=e565]: Location
+            - paragraph [ref=e566]: Tamil Nadu, India
+      - generic [ref=e568]:
+        - generic [ref=e569]:
+          - generic [ref=e570]:
+            - text: Name
+            - textbox "Name" [ref=e571]:
+              - /placeholder: Arjun Mehta
+          - generic [ref=e572]:
+            - text: Work email
+            - textbox "Work email" [ref=e573]:
+              - /placeholder: arjun@company.com
+        - generic [ref=e574]:
+          - generic [ref=e575]:
+            - text: Company
+            - textbox "Company" [ref=e576]:
+              - /placeholder: TechVision India
+          - generic [ref=e577]:
+            - text: Team size
+            - combobox "Team size" [ref=e578]:
+              - option "Select" [selected]
+              - option "1-10"
+              - option "11-25"
+              - option "26-100"
+              - option "100+"
+        - generic [ref=e579]:
+          - text: What should we improve first?
+          - textbox "What should we improve first?" [ref=e580]:
+            - /placeholder: Tell us where the team is losing time today and what a successful rollout should change.
+        - generic [ref=e581]:
+          - paragraph [ref=e582]: This front-end demo now validates the form and is ready to be connected to your CRM, webhook, or email workflow.
+          - button "Request demo" [ref=e583]
+  - contentinfo [ref=e584]:
+    - generic [ref=e586]:
+      - generic [ref=e587]:
+        - generic [ref=e588]:
+          - generic [ref=e589]:
+            - generic [ref=e590]: NJ
+            - generic [ref=e591]:
+              - paragraph [ref=e592]: NetJetGo
+              - paragraph [ref=e593]: Operating system for modern teams
+          - paragraph [ref=e594]: A calm workspace for operations, reporting, approvals, and delivery. Built to feel premium now, with polished placeholders ready for your final brand assets later.
+        - generic [ref=e595]:
+          - generic [ref=e596]:
+            - paragraph [ref=e597]: Explore
+            - generic [ref=e598]:
+              - link "Product overview" [ref=e599] [cursor=pointer]:
+                - /url: "#product"
+              - link "Feature architecture" [ref=e600] [cursor=pointer]:
+                - /url: "#features"
+              - link "Pricing" [ref=e601] [cursor=pointer]:
+                - /url: "#pricing"
+              - link "Contact" [ref=e602] [cursor=pointer]:
+                - /url: "#contact"
+          - generic [ref=e603]:
+            - paragraph [ref=e604]: Company
+            - generic [ref=e605]:
+              - link "netjetit.com" [ref=e606] [cursor=pointer]:
+                - /url: https://netjetit.com
+              - link "hq@netjetit.com" [ref=e607] [cursor=pointer]:
+                - /url: mailto:hq@netjetit.com
+              - link "+91 8220201666" [ref=e608] [cursor=pointer]:
+                - /url: tel:+918220201666
+      - generic [ref=e609]: Copyright 2026 Netjet IT. Built for calm operations and clear decisions.
