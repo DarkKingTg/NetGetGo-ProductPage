@@ -5,30 +5,51 @@
   --font-sans: "Manrope", sans-serif;
   --font-display: "Sora", sans-serif;
 
-  --color-ink: var(--color-ink-value);
-  --color-sand: var(--color-sand-value);
-  --color-panel: var(--color-panel-value);
-  --color-brand: var(--color-brand-value);
-  --color-bg-fade: var(--color-bg-fade-value);
+  --color-ink: #11203a;
+  --color-sand: #f4efe6;
+  --color-panel: #fffdf8;
+  --color-brand: #2553d7;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float-soft: float-soft 7s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 5s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes float-soft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+
+
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 20px 80px rgba(15, 23, 42, 0.08);
+    }
+
+    50% {
+      box-shadow: 0 28px 90px rgba(37, 83, 215, 0.12);
+    }
+  }
 }
 
 @layer base {
-  :root {
-    --color-ink-value: #11203a;
-    --color-sand-value: #f4efe6;
-    --color-panel-value: #fffdf8;
-    --color-brand-value: #2553d7;
-    --color-bg-fade-value: #f2ede5;
-  }
-
-  .dark {
-    --color-ink-value: #ffffff;
-    --color-sand-value: #09090b;
-    --color-panel-value: #111827;
-    --color-brand-value: #3b82f6;
-    --color-bg-fade-value: #050505;
-  }
-
   html {
     scroll-behavior: smooth;
   }
@@ -43,23 +64,22 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background:
-      radial-gradient(circle at top left, color-mix(in srgb, var(--color-panel) 84%, transparent), transparent 30%),
-      radial-gradient(circle at 85% 8%, color-mix(in srgb, #c27803 14%, transparent), transparent 20%),
-      radial-gradient(circle at 78% 72%, color-mix(in srgb, var(--color-brand) 10%, transparent), transparent 24%),
-      linear-gradient(180deg, var(--color-panel) 0%, var(--color-sand) 48%, var(--color-bg-fade) 100%);
-    color: var(--color-ink);
-    transition: background-color 0.5s ease, color 0.3s ease;
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.84), transparent 30%),
+      radial-gradient(circle at 85% 8%, rgba(194, 120, 3, 0.14), transparent 20%),
+      radial-gradient(circle at 78% 72%, rgba(37, 83, 215, 0.1), transparent 24%),
+      linear-gradient(180deg, #faf5ee 0%, #f5f0e8 48%, #f2ede5 100%);
+    color: #11203a;
   }
 
   ::selection {
     background: rgba(37, 83, 215, 0.18);
-    color: var(--color-ink);
+    color: #11203a;
   }
 }
 
 @layer components {
   .premium-card {
-    @apply rounded-[32px] border border-slate-200/70 bg-white/80 dark:border-white/10 dark:bg-slate-900/60 shadow-[0_20px_80px_rgba(15,23,42,0.08)] dark:shadow-[0_20px_80px_rgba(0,0,0,0.4)] backdrop-blur-xl;
+    @apply rounded-[32px] border border-white/70 bg-white/80 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl;
   }
 
 

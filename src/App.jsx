@@ -5,28 +5,27 @@ import SmoothScroll from './components/SmoothScroll'
 import Preloader from './components/Preloader'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoaded, setIsLoaded] = useState(false)
 
+  // Block native scrolling exactly while the preloader is on screen
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
+    if (!isLoaded) {
+      document.body.style.overflow = 'hidden'
       window.scrollTo(0, 0)
-    }, 1500)
-    return () => clearTimeout(timer)
-  }, [])
-
-  useEffect(() => {
-    if (isLoading) document.body.style.overflow = 'hidden'
-    else document.body.style.overflow = ''
-  }, [isLoading])
+    } else {
+      document.body.style.overflow = ''
+    }
+  }, [isLoaded])
 
   return (
-    <SmoothScroll>
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader key="preloader" />}
+    <>
+      <AnimatePresence>
+        {!isLoaded && <Preloader onComplete={() => setIsLoaded(true)} />}
       </AnimatePresence>
-      <Home />
-    </SmoothScroll>
+      <SmoothScroll>
+        <Home isLoaded={isLoaded} />
+      </SmoothScroll>
+    </>
   )
 }
 

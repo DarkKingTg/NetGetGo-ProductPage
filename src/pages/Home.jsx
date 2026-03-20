@@ -145,7 +145,7 @@ function FeaturePlaceholder({ feature }) {
   )
 }
 
-function Home() {
+function Home({ isLoaded = true }) {
   const [activeFaq, setActiveFaq] = useState(faqs[0].id)
 
   const staggerContainer = {
@@ -155,6 +155,10 @@ function Home() {
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+  }
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
   }
 
   return (
@@ -176,7 +180,7 @@ function Home() {
                 className="relative max-w-2xl"
                 variants={staggerContainer}
                 initial="hidden"
-                animate="visible"
+                animate={isLoaded ? "visible" : "hidden"}
               >
                 <motion.div variants={itemVariants} className="inline-flex rounded-full border border-white/80 bg-white/80 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slate-600 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
                   Calm operations for growing teams.
@@ -228,7 +232,7 @@ function Home() {
 
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 30 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
+                animate={isLoaded ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.95, y: 30 }}
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                 className="lg:pl-4"
               >
