@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import Button from '../components/Button'
 import Container from '../components/Container'
 import DashboardPreview from '../components/DashboardPreview'
@@ -147,6 +148,19 @@ function FeaturePlaceholder({ feature }) {
 function Home() {
   const [activeFaq, setActiveFaq] = useState(faqs[0].id)
 
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+  }
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+  }
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
+  }
+
   return (
     <>
       <a
@@ -162,20 +176,25 @@ function Home() {
         <section id="hero" className="relative pt-8 sm:pt-10 lg:pt-14">
           <Container className="relative">
             <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative max-w-2xl">
-                <div className="inline-flex animate-fade-up rounded-full border border-white/80 bg-white/80 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slate-600 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+              <motion.div
+                className="relative max-w-2xl"
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div variants={itemVariants} className="inline-flex rounded-full border border-white/80 bg-white/80 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slate-600 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
                   Calm operations for growing teams.
-                </div>
+                </motion.div>
 
-                <h1 className="animate-fade-up animate-delay-1 mt-7 font-display text-5xl font-semibold leading-[0.94] tracking-[-0.06em] text-ink sm:text-6xl lg:text-7xl">
+                <motion.h1 variants={itemVariants} className="mt-7 font-display text-5xl font-semibold leading-[0.94] tracking-[-0.06em] text-ink sm:text-6xl lg:text-7xl">
                   Run the business from one calm, premium workspace.
-                </h1>
+                </motion.h1>
 
-                <p className="animate-fade-up animate-delay-2 mt-6 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl">
+                <motion.p variants={itemVariants} className="mt-6 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl">
                   NetJetGo brings operations, automation, reporting, and client delivery into one premium layer so growing teams can move faster without adding more chaos.
-                </p>
+                </motion.p>
 
-                <div className="animate-fade-up animate-delay-3 mt-8 flex flex-col gap-3 sm:flex-row">
+                <motion.div variants={itemVariants} className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Button href="#contact" variant="primary" size="lg">
                     Book a live demo
                     <ArrowRightIcon />
@@ -183,13 +202,13 @@ function Home() {
                   <Button href="#pricing" variant="outline" size="lg">
                     Explore pricing
                   </Button>
-                </div>
+                </motion.div>
 
-                <div className="animate-fade-up animate-delay-4 mt-9 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+                <motion.div variants={itemVariants} className="mt-9 flex flex-wrap items-center gap-3 text-sm text-slate-500">
                   {['No credit card', 'Built for India-first teams', 'Implementation support included'].map((item) => (
                     <span
                       key={item}
-                      className="inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/65 px-3 py-2 transition-transform duration-300 hover:-translate-y-0.5 backdrop-blur"
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/65 px-3 py-2 backdrop-blur"
                     >
                       <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/12 text-emerald-600">
                         <CheckIcon className="h-3.5 w-3.5" />
@@ -197,23 +216,28 @@ function Home() {
                       {item}
                     </span>
                   ))}
-                </div>
+                </motion.div>
 
-                <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                  {heroStats.map((item, index) => (
-                    <div key={item.label} className={`premium-card animate-fade-up p-5 transition-transform duration-300 hover:-translate-y-1 ${index === 0 ? 'animate-delay-3' : index === 1 ? 'animate-delay-4' : 'animate-delay-5'}`}>
+                <motion.div variants={itemVariants} className="mt-10 grid gap-4 sm:grid-cols-3">
+                  {heroStats.map((item) => (
+                    <div key={item.label} className="premium-card p-5">
                       <p className="font-display text-2xl font-semibold tracking-[-0.05em] text-ink sm:text-3xl">
                         {item.value}
                       </p>
                       <p className="mt-2 text-sm leading-6 text-slate-600">{item.label}</p>
                     </div>
                   ))}
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-              <div className="animate-fade-up animate-delay-3 lg:pl-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                className="lg:pl-4"
+              >
                 <DashboardPreview />
-              </div>
+              </motion.div>
             </div>
           </Container>
         </section>
@@ -256,12 +280,24 @@ function Home() {
             />
 
             <div className="mt-14 grid gap-6 lg:grid-cols-3">
-              {outcomes.map((item) => (
-                <article key={item.title} className="premium-card p-7 transition-transform duration-300 hover:-translate-y-1">
+              {outcomes.map((item, index) => (
+                <motion.article
+                  key={item.title}
+                  custom={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: (i) => ({ opacity: 1, y: 0, transition: { duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] } })
+                  }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-10% 0px" }}
+                  whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+                  className="premium-card p-7"
+                >
                   <p className="font-display text-4xl font-semibold tracking-[-0.06em] text-ink">{item.stat}</p>
                   <h3 className="mt-6 font-display text-2xl font-semibold tracking-[-0.04em] text-ink">{item.title}</h3>
                   <p className="mt-4 text-base leading-7 text-slate-600">{item.description}</p>
-                </article>
+                </motion.article>
               ))}
             </div>
           </Container>
@@ -318,14 +354,26 @@ function Home() {
             />
 
             <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {features.map((feature) => (
-                <article key={feature.title} className="premium-card overflow-hidden p-4 transition-transform duration-300 hover:-translate-y-1">
+              {features.map((feature, index) => (
+                <motion.article 
+                  key={feature.title} 
+                  custom={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: (i) => ({ opacity: 1, y: 0, transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] } })
+                  }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-5% 0px" }}
+                  whileHover={{ y: -6, transition: { type: "spring", stiffness: 300 } }}
+                  className="premium-card overflow-hidden p-4"
+                >
                   <FeaturePlaceholder feature={feature} />
                   <div className="px-3 pb-3 pt-6">
                     <h3 className="font-display text-2xl font-semibold tracking-[-0.04em] text-ink">{feature.title}</h3>
                     <p className="mt-4 text-base leading-7 text-slate-600">{feature.description}</p>
                   </div>
-                </article>
+                </motion.article>
               ))}
             </div>
           </Container>
@@ -343,8 +391,19 @@ function Home() {
                 />
 
                 <div className="space-y-4">
-                  {workflowSteps.map((item) => (
-                    <article key={item.step} className="rounded-[28px] border border-white/10 bg-white/[0.05] p-5 transition-transform duration-300 hover:translate-x-1">
+                  {workflowSteps.map((item, index) => (
+                    <motion.article 
+                      key={item.step} 
+                      custom={index}
+                      variants={{
+                        hidden: { opacity: 0, x: -30 },
+                        visible: (i) => ({ opacity: 1, x: 0, transition: { duration: 0.7, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] } })
+                      }}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: "-5% 0px" }}
+                      className="rounded-[28px] border border-white/10 bg-white/[0.05] p-5"
+                    >
                       <div className="flex items-center gap-4">
                         <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-white/65">
                           {item.step}
@@ -352,7 +411,7 @@ function Home() {
                         <h3 className="font-display text-2xl font-semibold tracking-[-0.04em]">{item.title}</h3>
                       </div>
                       <p className="mt-4 max-w-2xl text-base leading-7 text-white/70">{item.description}</p>
-                    </article>
+                    </motion.article>
                   ))}
                 </div>
               </div>
@@ -370,8 +429,20 @@ function Home() {
             />
 
             <div className="mt-14 grid gap-6 lg:grid-cols-3">
-              {testimonials.map((item) => (
-                <article key={item.name} className="premium-card p-7 transition-transform duration-300 hover:-translate-y-1">
+              {testimonials.map((item, index) => (
+                <motion.article 
+                  key={item.name} 
+                  custom={index}
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.95 },
+                    visible: (i) => ({ opacity: 1, scale: 1, transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] } })
+                  }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-5% 0px" }}
+                  whileHover={{ y: -6, scale: 1.02, transition: { type: "spring", stiffness: 300 } }}
+                  className="premium-card p-7"
+                >
                   <div className="flex gap-1 text-amber-500">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <span key={index}>*</span>
@@ -384,7 +455,7 @@ function Home() {
                       {item.role}, {item.company}
                     </p>
                   </div>
-                </article>
+                </motion.article>
               ))}
             </div>
           </Container>
@@ -400,9 +471,18 @@ function Home() {
             />
 
             <div className="mt-14 grid gap-6 xl:grid-cols-3">
-              {pricingPlans.map((plan) => (
-                <article
+              {pricingPlans.map((plan, index) => (
+                <motion.article
                   key={plan.name}
+                  custom={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: (i) => ({ opacity: 1, y: 0, transition: { duration: 0.8, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] } })
+                  }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-5% 0px" }}
+                  whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
                   className={`premium-card flex h-full flex-col p-7 ${
                     plan.featured ? 'relative border-blue-600/40 bg-white shadow-[0_26px_80px_rgba(37,83,215,0.16)] animate-pulse-glow' : ''
                   }`}
@@ -436,7 +516,7 @@ function Home() {
                       {plan.cta}
                     </Button>
                   </div>
-                </article>
+                </motion.article>
               ))}
             </div>
 
