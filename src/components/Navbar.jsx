@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Button from './Button'
+import ThemeToggle from './ThemeToggle'
 import useToggle from '../hooks/useToggle'
 import '../styles/navbar.css'
 
@@ -60,8 +61,8 @@ function Navbar() {
 
   const handleNavClick = () => closeMenu()
   const shellClasses = isScrolled
-    ? 'border border-white/70 bg-white/85 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl'
-    : 'border border-transparent bg-white/55 backdrop-blur-lg'
+    ? 'border border-white/70 bg-white/85 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/80 dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)]'
+    : 'border border-transparent bg-white/55 backdrop-blur-lg dark:bg-slate-900/50'
 
   return (
     <header className="sticky top-0 z-50 pt-4">
@@ -95,6 +96,7 @@ function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <ThemeToggle />
             <Button href="#contact" variant="outline" size="sm">
               Talk to sales
             </Button>
@@ -148,6 +150,10 @@ function Navbar() {
             </ul>
           </nav>
           <div className="mt-4 flex flex-col gap-3">
+            <div className="flex items-center justify-between px-2 pb-2">
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Theme</span>
+              <ThemeToggle />
+            </div>
             <Button href="#contact" variant="outline" size="md" onClick={handleNavClick}>
               Talk to sales
             </Button>
