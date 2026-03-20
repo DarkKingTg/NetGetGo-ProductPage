@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Button from './Button'
 import useToggle from '../hooks/useToggle'
+import '../styles/navbar.css'
 
 const navLinks = [
   { name: 'Overview', href: '#product' },
@@ -66,20 +67,11 @@ function Navbar() {
     <header className="sticky top-0 z-50 pt-4">
       <div className="mx-auto flex max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className={`flex w-full items-center justify-between rounded-full px-4 py-3 transition duration-300 sm:px-5 ${shellClasses}`}>
-          <a href="#hero" className="flex items-center gap-3" onClick={handleNavClick}>
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-sm font-bold text-white">
-              NJ
-            </span>
-            <span className="leading-tight">
-              <span className="block font-display text-base font-semibold tracking-[-0.03em] text-ink">
-                NetJetGo
-              </span>
-              <span className="block text-[0.68rem] uppercase tracking-[0.24em] text-slate-500">
-                by Netjet IT
-              </span>
-            </span>
-          </a>
+          
 
+          <span className="navbar__logo">
+            <img src="./src/assets/icons/logo-text.png" alt="NetJetGo logo" />
+          </span>
           <nav className="hidden lg:block" aria-label="Main navigation">
             <ul className="flex items-center gap-2 rounded-full bg-white/75 px-2 py-2 ring-1 ring-slate-900/6">
               {navLinks.map((item) => {
@@ -89,11 +81,10 @@ function Navbar() {
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className={`inline-flex rounded-full px-4 py-2 text-sm font-medium transition ${
-                        isActive
+                      className={`inline-flex rounded-full px-4 py-2 text-sm font-medium transition ${isActive
                           ? 'bg-ink text-white shadow-lg shadow-slate-900/10'
                           : 'text-slate-600 hover:bg-slate-900/5 hover:text-slate-900'
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </a>
@@ -136,9 +127,8 @@ function Navbar() {
 
       <div
         id="mobile-menu"
-        className={`mx-auto mt-3 max-w-7xl px-4 transition duration-300 sm:px-6 lg:hidden ${
-          menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
-        }`}
+        className={`mx-auto mt-3 max-w-7xl px-4 transition duration-300 sm:px-6 lg:hidden ${menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+          }`}
       >
         <div className="overflow-hidden rounded-[28px] border border-white/70 bg-white/90 p-4 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl">
           <nav aria-label="Mobile navigation">
