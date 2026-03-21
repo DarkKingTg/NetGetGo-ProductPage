@@ -47,6 +47,18 @@
       box-shadow: 0 28px 90px rgba(37, 83, 215, 0.12);
     }
   }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
 @layer base {
@@ -64,10 +76,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background:
-      radial-gradient(circle at top left, rgba(255, 255, 255, 0.84), transparent 30%),
-      radial-gradient(circle at 85% 8%, rgba(194, 120, 3, 0.14), transparent 20%),
-      radial-gradient(circle at 78% 72%, rgba(37, 83, 215, 0.1), transparent 24%),
-      linear-gradient(180deg, #faf5ee 0%, #f5f0e8 48%, #f2ede5 100%);
+      radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(194, 120, 3, 0.08), transparent 30%),
+      radial-gradient(circle at 75% 85%, rgba(37, 83, 215, 0.08), transparent 45%),
+      linear-gradient(135deg, #faf5ee 0%, #f5f0e8 48%, #efe9df 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease-in-out infinite;
     color: #403ea1;
   }
 
