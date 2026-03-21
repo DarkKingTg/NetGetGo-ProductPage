@@ -5,7 +5,7 @@
   --font-sans: "Manrope", sans-serif;
   --font-display: "Sora", sans-serif;
 
-  --color-ink: #11203a;
+  --color-ink: #403ea1;
   --color-sand: #f4efe6;
   --color-panel: #fffdf8;
   --color-brand: #2553d7;
@@ -68,12 +68,12 @@
       radial-gradient(circle at 85% 8%, rgba(194, 120, 3, 0.14), transparent 20%),
       radial-gradient(circle at 78% 72%, rgba(37, 83, 215, 0.1), transparent 24%),
       linear-gradient(180deg, #faf5ee 0%, #f5f0e8 48%, #f2ede5 100%);
-    color: #11203a;
+    color: #403ea1;
   }
 
   ::selection {
     background: rgba(37, 83, 215, 0.18);
-    color: #11203a;
+    color: #403ea1;
   }
 }
 

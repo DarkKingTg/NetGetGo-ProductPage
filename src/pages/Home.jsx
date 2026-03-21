@@ -249,7 +249,6 @@ function Home() {
                 <p className="text-sm uppercase tracking-[0.24em] text-slate-500">
                   Representative customer marks
                 </p>
-                <p className="text-sm text-slate-500">Swap these placeholders for final customer or partner logos later.</p>
               </div>
               <div className="logo-marquee mt-6 overflow-hidden">
                 <div className="flex min-w-max items-center gap-4 animate-marquee pr-4">
